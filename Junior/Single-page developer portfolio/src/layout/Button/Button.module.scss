@@ -5,6 +5,8 @@
   cursor: pointer;
   letter-spacing: 2.28571px;
   position: relative;
+  display: flex;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn::after {
@@ -14,5 +16,13 @@
   left: 0;
   background-color: colors.$light-green;
   height: 1px;
-  width: 7.5rem;
+  width: 100%;
+}
+
+.btn:hover {
+  color: colors.$light-green;
+}
+
+.marginBottom {
+  margin-bottom: 4rem;
 }
