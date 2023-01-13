@@ -1,0 +1,16 @@
+@use '../src/sass/global/colors.scss' as colors;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Sora:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 75vw;
+  margin: 0 auto;
+  background-color: colors.$black;
+  color: colors.$white;
+  font-family: 'Space Grotesk', sans-serif;
+}

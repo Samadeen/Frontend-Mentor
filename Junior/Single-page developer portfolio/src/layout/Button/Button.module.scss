@@ -1,0 +1,18 @@
+@use '../../sass/global/colors.scss' as colors;
+
+.btn {
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 2.28571px;
+  position: relative;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  bottom: -0.7rem;
+  left: 0;
+  background-color: colors.$light-green;
+  height: 1px;
+  width: 7.5rem;
+}

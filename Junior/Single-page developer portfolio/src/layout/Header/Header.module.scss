@@ -1,0 +1,17 @@
+@import '../../sass/utils/mixins';
+
+.header {
+  @include flex_spaceBetween;
+  padding: 2.4375rem 0;
+
+  p {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .icons {
+    @include flex_spaceBetween;
+    gap: 1.5rem;
+    margin-right: 3rem;
+  }
+}

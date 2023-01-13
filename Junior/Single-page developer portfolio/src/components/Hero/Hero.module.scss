@@ -1,0 +1,53 @@
+@use '../../sass/global/colors.scss' as colors;
+@import '../../sass/utils/mixins';
+
+.hero_details {
+  display: flex;
+  justify-content: center;
+  //   @include flex_spaceBetween;
+  align-items: flex-start;
+  position: relative;
+
+  h1 {
+    font-size: 5.5rem;
+    line-height: 88px;
+    letter-spacing: -2.5px;
+    // transform: translateX(120px);
+    margin-top: 3rem;
+
+    span {
+      border-bottom: 4px solid colors.$light-green;
+    }
+  }
+
+  p {
+    width: 27.8rem;
+    margin-top: 2.5em;
+    margin-bottom: 4.1rem;
+    font: 1.1rem;
+    padding-right: 2.7rem;
+    line-height: 1.75rem;
+  }
+
+  .hero_content {
+    img {
+      position: absolute;
+      top: 0;
+      left: -12rem;
+    }
+  }
+
+  .hero_image {
+    background-color: colors.$dark_grey;
+    padding-top: 10rem;
+    transform: translateY(-120px);
+    z-index: -1;
+    position: relative;
+
+    .circle {
+      bottom: 6rem;
+      left: -5rem;
+      position: absolute;
+    }
+  }
+}
