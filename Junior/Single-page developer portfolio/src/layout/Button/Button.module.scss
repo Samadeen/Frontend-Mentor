@@ -1,6 +1,11 @@
 @use '../../sass/global/colors.scss' as colors;
 
 .btn {
+  border: none;
+  background-color: transparent;
+  color: colors.$white;
+  font-family: inherit;
+  font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
   letter-spacing: 2.28571px;
