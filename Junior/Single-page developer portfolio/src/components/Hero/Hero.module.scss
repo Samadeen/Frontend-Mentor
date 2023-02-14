@@ -2,9 +2,7 @@
 @import '../../sass/utils/mixins';
 
 .hero_details {
-  display: flex;
-  justify-content: center;
-  //   @include flex_spaceBetween;
+  @include flex_spaceBetween;
   align-items: flex-start;
   position: relative;
 
@@ -12,7 +10,6 @@
     font-size: 5.5rem;
     line-height: 88px;
     letter-spacing: -2.5px;
-    // transform: translateX(120px);
     margin-top: 3rem;
 
     span {
@@ -34,6 +31,10 @@
       position: absolute;
       top: 0;
       left: -12rem;
+    }
+
+    .w {
+      width: 7.45rem;
     }
   }
 
