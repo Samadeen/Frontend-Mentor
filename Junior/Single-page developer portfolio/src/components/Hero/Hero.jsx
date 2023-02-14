@@ -7,7 +7,7 @@ import circle from '../../assets/circle.svg';
 
 const Hero = () => {
   return (
-    <div className={styles.heroContainer}>
+    <div className={`${styles.heroContainer} mw`}>
       <Header />
       <div className={styles.hero_details}>
         <div className={styles.hero_content}>
@@ -20,7 +20,9 @@ const Hero = () => {
             Based in the UK, I’m a front-end developer passionate about building
             accessible web apps that users love.
           </p>
-          <Button linkText='Contact Me' />
+          <div className={styles.w}>
+            <Button linkText='Contact Me' />
+          </div>
         </div>
         <div className={styles.hero_image}>
           <img src={circle} alt='circle' className={styles.circle} />
