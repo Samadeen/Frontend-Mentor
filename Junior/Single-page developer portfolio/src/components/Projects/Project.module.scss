@@ -1,0 +1,61 @@
+@use '../../sass/global/colors.scss' as colors;
+@import '../../sass/utils/mixins.scss';
+
+.project_headings {
+  @include flex_spaceBetween;
+  margin: 5rem 0 3rem;
+
+  h2 {
+    font-size: 5.5rem;
+  }
+}
+
+.project_headings:last-child {
+  margin-top: 3rem;
+}
+
+.projectContainer {
+  @include flex_center;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  img {
+    width: 540px;
+    height: 400px;
+  }
+
+  h3 {
+    margin-top: 1.2rem;
+  }
+
+  .project_stack_details {
+    position: relative;
+    .hover {
+      @include flex_center;
+      flex-direction: column;
+      width: 540px;
+      height: 400px;
+      position: absolute;
+      background-color: colors.$black;
+      opacity: 0;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      .view_project {
+        margin-bottom: 5rem;
+      }
+    }
+
+    .hover:hover {
+      opacity: 0.75;
+    }
+    margin-top: 1.3rem;
+    .stack {
+      display: flex;
+      align-items: center;
+      margin-top: 0.3rem;
+      gap: 1.1rem;
+      color: colors.$light-grey;
+    }
+  }
+}
