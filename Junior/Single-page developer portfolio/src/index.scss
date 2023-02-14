@@ -8,10 +8,13 @@
 }
 
 body {
-  max-width: 75vw;
-  margin: 0 auto;
   background-color: colors.$black;
   color: colors.$white;
   font-family: 'Space Grotesk', sans-serif;
   overflow-x: hidden;
+}
+
+.mw {
+  max-width: 75vw;
+  margin: 0 auto;
 }
