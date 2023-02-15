@@ -1,0 +1,53 @@
+@use '../../scss/utils/functions' as fn;
+@use '../../scss/global/colors' as colors;
+@import '../../scss/utils/mixins';
+
+.hero_container {
+  max-width: 80vw;
+  margin: 0 auto fn.rem(150);
+  position: relative;
+
+  .hero_details {
+    @include flex_spaceBetween;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: colors.$very-light-grey;
+    position: absolute;
+    bottom: 0.32rem;
+    padding: fn.rem(56) fn.rem(51) fn.rem(56) 0;
+    width: fn.rem(445);
+
+    h1 {
+      font-size: fn.rem(50);
+      line-height: fn.rem(50);
+      color: colors.$grayish-dark-blue;
+    }
+
+    p {
+      @include flex_centered;
+      background-color: colors.$dark-blue;
+      color: colors.$very-light-grey;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: -3.53rem;
+      width: fn.rem(200);
+      position: relative;
+      padding: fn.rem(17);
+      font-family: 'Public Sans';
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 2px;
+      cursor: pointer;
+
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        background-color: #0000002f;
+        align-self: flex-start;
+        padding: fn.rem(17);
+      }
+    }
+  }
+}
