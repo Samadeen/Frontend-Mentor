@@ -1,0 +1,22 @@
+@use '../../scss/utils/functions' as fn;
+@use '../../scss/global/colors' as colors;
+@import '../../scss/utils/mixins';
+
+.interested {
+  max-width: 80vw;
+  margin: 0 auto fn.rem(150);
+  @include flex_spaceBetween;
+
+  div {
+    background-color: colors.$dark-blue;
+    height: 1px;
+    width: 45%;
+    opacity: 0.15;
+  }
+
+  h2 {
+    font-size: fn.rem(40);
+    flex: 0.7;
+    color: colors.$dark-blue;
+  }
+}
