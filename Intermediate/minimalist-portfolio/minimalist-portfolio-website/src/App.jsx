@@ -1,34 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Portfolio from './pages/Portfolio/Portfolio';
+import Layout from './layouts/Layout/Layout';
+import ScrollToTop from './utils/ScrollToTheTop';
+import Manage from './pages/Manage/Manage';
+import Bookmark from './pages/Bookmark/Bookmark';
+import Insure from './pages/Insure/Insure';
+import Fylo from './pages/Fylo/Fylo';
+import Contact from './pages/Contact/Contact';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+    <Layout>
+      <ScrollToTop>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/portfolio' element={<Portfolio />} />
+          <Route path='/portfolio/manage' element={<Manage />} />
+          <Route path='/portfolio/manage/fylo' element={<Fylo />} />
+          <Route path='/portfolio/bookmark' element={<Bookmark />} />
+          <Route path='/portfolio/insure' element={<Insure />} />
+          <Route path='/portfolio/fylo' element={<Fylo />} />
+          <Route path='/bookmark' element={<Bookmark />} />
+          <Route path='/manage' element={<Manage />} />
+          <Route path='/insure' element={<Insure />} />
+          <Route path='/fylo' element={<Fylo />} />
+          <Route path='/contact' element={<Contact />} />
+        </Routes>
+      </ScrollToTop>
+    </Layout>
+  );
+};
 
-export default App
+export default App;
