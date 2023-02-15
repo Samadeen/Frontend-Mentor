@@ -1,0 +1,18 @@
+@use '../../scss/utils/functions' as fn;
+@use '../../scss/global/colors' as colors;
+
+.btn {
+  padding: fn.rem(17) fn.rem(36) fn.rem(17) fn.rem(32);
+  color: colors.$dark-blue;
+  border: 1px solid colors.$dark-blue;
+  text-transform: uppercase;
+  font-size: fn.rem(12);
+  font-family: 'Public Sans', sans-serif;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: colors.$dark-blue;
+    color: colors.$very-light-grey;
+  }
+}
