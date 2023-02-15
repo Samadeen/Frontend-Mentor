@@ -1,0 +1,60 @@
+@use '../../scss/utils/functions' as fn;
+@use '../../scss/global/colors' as colors;
+@import '../../scss/utils/mixins';
+
+.navigation_container {
+  @include flex_spaceBetween;
+  border-top: 1px solid colors.$light-grey;
+  border-bottom: 1px solid colors.$light-grey;
+  margin-bottom: fn.rem(150);
+  position: relative;
+
+  a {
+    padding: 2rem 0;
+    @include flex_centered;
+    gap: 1rem;
+
+    .next,
+    .prev {
+      h3 {
+        @include flex;
+        flex-direction: column;
+        color: colors.$dark-blue;
+        font-size: fn.rem(32);
+        font-weight: 400;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: colors.$cyan;
+        }
+      }
+      small {
+        font-family: 'Public Sans';
+        font-size: 0.7rem;
+        color: colors.$dark-blue;
+        opacity: 0.7;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: colors.$cyan;
+        }
+      }
+    }
+
+    .next {
+      small {
+        @include flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    height: 7.85rem;
+    width: 1px;
+    position: absolute;
+    background-color: colors.$light-grey;
+    left: 50%;
+  }
+}
