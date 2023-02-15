@@ -1,0 +1,30 @@
+@use '../../scss/utils/functions' as fn;
+@use '../../scss/global/colors' as colors;
+@import '../../scss/utils/mixins';
+
+.header_container {
+  padding: fn.rem(64) 0;
+  max-width: 80vw;
+  margin: 0 auto;
+  @include flex_spaceBetween;
+
+  ul {
+    @include flex_align;
+    gap: fn.rem(43);
+
+    a {
+      color: colors.$grayish-dark-blue;
+      font-size: fn.rem(12);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: colors.$cyan;
+        transform: scale(1.05);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}
