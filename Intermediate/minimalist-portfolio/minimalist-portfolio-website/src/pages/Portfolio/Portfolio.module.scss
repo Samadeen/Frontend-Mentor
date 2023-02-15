@@ -1,0 +1,17 @@
+@use '../../scss/utils/functions' as fn;
+@use '../../scss/global/colors' as colors;
+@import '../../scss/utils/mixins';
+
+.portfolio_container {
+  max-width: 80vw;
+  margin: 0 auto;
+
+  .space {
+    @include flex_spaceBetween;
+    margin-bottom: fn.rem(80);
+  }
+
+  .reverse {
+    flex-direction: row-reverse;
+  }
+}
