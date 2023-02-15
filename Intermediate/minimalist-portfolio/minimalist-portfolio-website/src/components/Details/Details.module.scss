@@ -1,0 +1,48 @@
+@use '../../scss/utils/functions' as fn;
+@use '../../scss/global/colors' as colors;
+@import '../../scss/utils/mixins';
+
+.details_container {
+  max-width: 80vw;
+  margin: 0 auto;
+
+  .details_holder {
+    @include flex_spaceBetween;
+    align-items: flex-start;
+    margin-top: fn.rem(115);
+
+    .project {
+      flex: 0.7;
+
+      .project_background,
+      .static_preview {
+        h3 {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 2rem;
+          line-height: fn.rem(42);
+          letter-spacing: -0.285714px;
+          color: colors.$dark-blue;
+          margin-bottom: fn.rem(28);
+        }
+
+        p {
+          font-family: 'Public Sans';
+          font-style: normal;
+          font-size: fn.rem(15);
+          line-height: fn.rem(30);
+          color: colors.$dark-blue;
+          mix-blend-mode: normal;
+          opacity: 0.8;
+        }
+      }
+      .static_preview {
+        margin-top: fn.rem(40);
+
+        img {
+          margin-bottom: fn.rem(32);
+        }
+      }
+    }
+  }
+}
