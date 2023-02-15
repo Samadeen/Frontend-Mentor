@@ -1,0 +1,43 @@
+@use '../../scss/utils/functions' as fn;
+@use '../../scss/global/colors' as colors;
+@import '../../scss/utils/mixins';
+
+.card_container {
+  width: fn.rem(350);
+  border-bottom: 1.5px solid colors.$light-grey;
+  border-top: 1.5px solid colors.$light-grey;
+  padding: 3rem 0.5rem;
+
+  h2 {
+    font-size: fn.rem(40);
+    color: colors.$dark-blue;
+    margin-bottom: fn.rem(28);
+  }
+
+  p {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    line-height: fn.rem(30);
+    margin-bottom: fn.rem(32);
+    opacity: 0.8;
+  }
+}
+
+.pad {
+  padding: 7rem 0;
+}
+
+.margin {
+  margin-bottom: 3rem;
+
+  h3 {
+    margin: 1rem 0;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: fn.rem(30);
+    color: colors.$cyan;
+  }
+}
