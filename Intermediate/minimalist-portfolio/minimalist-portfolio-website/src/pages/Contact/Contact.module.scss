@@ -1,0 +1,55 @@
+@use '../../scss/utils/functions' as fn;
+@use '../../scss/global/colors' as colors;
+@import '../../scss/utils/mixins';
+
+.contact_container {
+  max-width: 80vw;
+  margin: 0 auto;
+  // min-height: 60vh;
+
+  .contact_details,
+  .contact_form {
+    @include flex;
+    margin-bottom: fn.rem(48);
+
+    h2 {
+      width: 50%;
+      font-style: normal;
+      font-weight: 700;
+      font-size: fn.rem(40);
+      line-height: fn.rem(42);
+      letter-spacing: -0.357143px;
+      color: colors.$dark-blue;
+    }
+    .text,
+    .form {
+      width: 50%;
+      margin-left: auto;
+
+      p {
+        font-family: 'Public Sans';
+        font-style: normal;
+        font-weight: 400;
+        line-height: fn.rem(30);
+        color: colors.$dark-blue;
+        mix-blend-mode: normal;
+        opacity: 0.8;
+        margin-bottom: fn.rem(24);
+      }
+
+      ul {
+        @include flex_align;
+        gap: fn.rem(15);
+      }
+    }
+  }
+
+  .contact_form {
+    form {
+      label,
+      input {
+        display: block;
+      }
+    }
+  }
+}
