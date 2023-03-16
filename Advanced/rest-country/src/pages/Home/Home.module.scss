@@ -1,0 +1,18 @@
+.home_wrapper {
+  padding: 2rem 80px;
+  min-height: 100vh;
+  max-width: 100vw;
+
+  @media (max-width: 770px) {
+    & {
+      padding: 2rem;
+    }
+  }
+
+  .home_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
+    place-content: center;
+    gap: 75px;
+  }
+}
