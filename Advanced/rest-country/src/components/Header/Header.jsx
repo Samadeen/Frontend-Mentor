@@ -14,8 +14,8 @@ const Header = () => {
       className={styles.header_container}
     >
       <h1>Where in the world?</h1>
-      <div className={styles.mode}>
-        <img src={moon} alt='moon icon' onClick={toggleTheme} />
+      <div className={styles.mode} onClick={toggleTheme}>
+        <img src={moon} alt='moon icon' />
         <p>Dark Mode</p>
       </div>
     </m.header>
