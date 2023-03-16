@@ -36,7 +36,7 @@ const Home = () => {
           key={country.name.common}
           country={country.name.common}
           capital={country.capital}
-          population={country.population}
+          population={country.population.toLocaleString()}
           region={country.region}
           img={country.flags.svg}
         />

@@ -54,7 +54,7 @@ const Country = () => {
                     ? nativeNames?.[0]?.official
                     : c.name.common
                 }
-                population={c.population}
+                population={c.population.toLocaleString()}
                 region={c.region}
                 subRegion={c.subregion}
                 topLevelDomain={c.tld}
