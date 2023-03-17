@@ -1,0 +1,43 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.searchWord {
+  @include flex_justifyBetween;
+  margin: 0 auto;
+  margin-top: fn.rem(45);
+  max-width: 50vw;
+  @include breakpoint-down('sm') {
+    max-width: 95.5vw;
+    margin: 0 auto;
+  }
+
+  .word {
+    h1 {
+      font-weight: 700;
+      font-size: fn.rem(64);
+      line-height: fn.rem(77);
+      margin-bottom: fn.rem(8);
+      text-transform: capitalize;
+    }
+    p {
+      font-size: fn.rem(24);
+      line-height: fn.rem(29);
+      color: color.$purple;
+    }
+  }
+  img {
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}

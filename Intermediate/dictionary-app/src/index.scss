@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800&family=Inter:wght@200;300;400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Inter';
+}
+
+#Serif {
+  font-family: 'Lora', serif;
+}
+
+#Sans-Serif {
+  font-family: 'Inter', sans-serif;
+}
+
+#Mono {
+  font-family: 'Inconsolata', monospace;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+small,
+span,
+input {
+  font-family: inherit;
+}
+
+.dark {
+  min-height: 100vh;
+  background-color: #050505;
+}
+
+.light {
+  min-height: 100vh;
+  background-color: #fff;
+}

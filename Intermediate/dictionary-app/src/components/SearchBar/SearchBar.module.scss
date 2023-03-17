@@ -1,0 +1,47 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.searchBar_container {
+  max-width: 50vw;
+  margin: 0 auto;
+
+  @include breakpoint-down('sm') {
+    max-width: 95.5vw;
+    margin: 0 auto;
+  }
+  form {
+    label {
+      @include flex_justifyBetween;
+      position: relative;
+      background-color: color.$lighter-grey;
+      border-radius: 1rem;
+
+      input {
+        border: none;
+        padding: fn.rem(20) fn.rem(24);
+        background-color: transparent;
+        width: 100%;
+        font-weight: 700;
+        font-size: fn.rem(20);
+        line-height: fn.rem(24);
+        color: color.$light-dark;
+        border-radius: 1rem;
+
+        &:focus {
+          outline: none;
+          border: 1px solid color.$purple;
+          border-radius: 1rem;
+        }
+      }
+
+      img {
+        position: absolute;
+        right: fn.rem(24);
+        top: fn.rem(24);
+        cursor: pointer;
+      }
+    }
+  }
+}
