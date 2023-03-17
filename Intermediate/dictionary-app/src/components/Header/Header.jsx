@@ -21,7 +21,6 @@ const Header = () => {
   } = useContext(FontContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [switcher, setSwitcher] = useState(theme);
-  console.log(switcher);
 
   const switchHandler = () => {
     setSwitcher((prevState) => !prevState);

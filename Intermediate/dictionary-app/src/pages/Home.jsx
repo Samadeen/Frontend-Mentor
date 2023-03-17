@@ -5,7 +5,6 @@ import Header from '../components/Header/Header';
 import Definitions from '../components/Definitions/Definitions';
 import NoWords from '../components/NoWords/NoWords';
 import Loader from '../components/Loader/Loader';
-import { FontContext } from '../utils/font-context';
 
 const Home = () => {
   const [searchWord, setSearchWord] = useState('');
@@ -13,7 +12,6 @@ const Home = () => {
   const [check, setCheck] = useState(false);
   const [noWords, setNoWords] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { font } = useContext(FontContext);
 
   const fetchWord = async (e) => {
     e.preventDefault();
@@ -37,9 +35,7 @@ const Home = () => {
     if (word.length === 0) {
       setCheck(true);
     }
-    console.log(check);
   };
-  console.log(loading);
 
   return (
     <div>

@@ -16,9 +16,6 @@ const SearchBar = ({ setWord, word, fetchWord, check, setCheck }) => {
     }
   };
 
-  console.log(word.length);
-  console.log(typeof words);
-
   return (
     <m.section
       initial={{ opacity: 0, y: 30 }}
