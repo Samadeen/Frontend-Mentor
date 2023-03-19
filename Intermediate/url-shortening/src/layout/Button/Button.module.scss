@@ -1,0 +1,57 @@
+@use '../../scss//utils/functions' as fn;
+@use '../../scss/global/colors' as color;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+button {
+  border: none;
+  border-radius: fn.rem(28);
+  background-color: color.$cyan;
+  color: color.$white;
+  font-weight: bold;
+  padding: fn.rem(13) fn.rem(40);
+  cursor: pointer;
+  font-size: fn.rem(15);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+button.small {
+  padding: fn.rem(8.5) fn.rem(23.5);
+}
+
+button.normal {
+  padding: fn.rem(17) fn.rem(40);
+  border-radius: fn.rem(10);
+  @include breakpoint-down('md') {
+    width: 100%;
+  }
+}
+
+button.normalSmall {
+  border-radius: fn.rem(10);
+  padding: fn.rem(8.5) fn.rem(23.5);
+  @include breakpoint-down('md') {
+    width: 100%;
+  }
+}
+
+button.transparent {
+  background-color: transparent;
+  color: color.$grey;
+  @include breakpoint-down('md') {
+    color: color.$white;
+    margin-bottom: 1rem;
+  }
+}
+
+button.width {
+  width: 100%;
+}
