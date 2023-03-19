@@ -1,0 +1,73 @@
+@use '../../scss//utils/functions' as fn;
+@use '../../scss/global/colors' as color;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.footer_container {
+  background-color: color.$dark;
+  padding: fn.rem(71) 0;
+
+  .footer_wrapper {
+    @include flex_justifyBetween;
+    max-width: 80vw;
+    margin: 0 auto;
+
+    @include breakpoint-down('md') {
+      max-width: 95vw;
+      @include flex_centered;
+      flex-direction: column;
+    }
+    .footer_links {
+      @include flex_justifyBetween;
+      gap: fn.rem(78);
+
+      @include breakpoint-down('md') {
+        text-align: center;
+        gap: fn.rem(18);
+        flex-direction: column;
+        margin: fn.rem(45);
+      }
+
+      ul {
+        li {
+          font-weight: 500;
+          font-size: fn.rem(15);
+          line-height: fn.rem(22);
+          letter-spacing: -0.234375px;
+          color: #bfbfbf;
+          margin-bottom: fn.rem(10);
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+
+          &:first-child {
+            font-weight: 700;
+            font-size: fn.rem(16);
+            line-height: fn.rem(24);
+            letter-spacing: fn.rem(-0.25);
+            margin-bottom: fn.rem(22);
+            color: color.$white;
+          }
+
+          &:hover {
+            color: color.$cyan;
+          }
+        }
+      }
+    }
+
+    .social_links {
+      @include flex;
+      gap: fn.rem(24);
+
+      svg {
+        fill: color.$white;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          fill: color.$cyan;
+        }
+      }
+    }
+  }
+}
