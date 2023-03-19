@@ -1,0 +1,105 @@
+@use '../../scss//utils/functions' as fn;
+@use '../../scss/global/colors' as color;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.header_container {
+  @include flex_justifyBetween;
+  padding: fn.rem(48) fn.rem(166);
+  position: relative;
+
+  @include breakpoint-down('md') {
+    padding: 1.5rem 0.5rem;
+    max-width: 95vw;
+    margin: 0 auto;
+  }
+
+  .hamburger {
+    display: none;
+    @include breakpoint-down('md') {
+      display: flex;
+    }
+  }
+
+  .desktop {
+    @include flex_justifyBetween;
+    width: 100%;
+
+    .links {
+      @include flex_align;
+      gap: fn.rem(45.5);
+
+      .nav_links {
+        @include breakpoint-down('md') {
+          display: none;
+        }
+        ul {
+          @include flex_align;
+          list-style: none;
+          gap: fn.rem(29);
+
+          li {
+            transition: all 0.3s ease-in-out;
+            a {
+              text-decoration: none;
+              font-weight: bold;
+              font-size: fn.rem(15);
+              color: color.$grey;
+            }
+            &:hover {
+              transform: scale(1.05);
+            }
+
+            &:active {
+              transform: scale(0.95);
+            }
+          }
+        }
+      }
+    }
+    .buttons {
+      @include breakpoint-down('md') {
+        display: none;
+      }
+    }
+  }
+
+  .mobile {
+    @include flex_align;
+    flex-direction: column;
+    position: absolute;
+    top: 5.5rem;
+    width: 90vw;
+    background-color: color.$purple;
+    z-index: 1;
+    padding: 1rem;
+    border-radius: fn.rem(10);
+    @include breakpoint-down('md') {
+      display: flex;
+    }
+
+    .nav_links {
+      width: 100%;
+      border-bottom: 1px solid color.$grey;
+      margin-bottom: 1rem;
+      ul {
+        li {
+          text-align: center;
+          margin: fn.rem(30) 0;
+          a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .buttons {
+      width: 100%;
+      margin-bottom: 1rem;
+      @include flex_align;
+      flex-direction: column;
+    }
+  }
+}
