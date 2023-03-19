@@ -1,0 +1,149 @@
+@use '../../scss//utils/functions' as fn;
+@use '../../scss/global/colors' as color;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.advance_container {
+  max-width: 100vw;
+  background-color: #eff1f7;
+  margin-top: 15rem;
+
+  .advance_details {
+    max-width: 80vw;
+    margin: fn.rem(120) auto;
+    text-align: center;
+    @include breakpoint-down('md') {
+      max-width: 100vw;
+      margin: fn.rem(60) auto;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: fn.rem(40);
+      line-height: fn.rem(48);
+      text-align: center;
+      letter-spacing: fn.rem(-1);
+      color: color.$dark;
+      margin-bottom: fn.rem(18);
+    }
+
+    p {
+      width: 44%;
+      margin: 0 auto;
+      font-weight: 500;
+      font-size: fn.rem(18);
+      line-height: fn.rem(32);
+      letter-spacing: 0.122727px;
+      color: color.$grey;
+      @include breakpoint-down('md') {
+        width: 100%;
+      }
+    }
+
+    .cards {
+      @include flex_justifyBetween;
+      margin: fn.rem(106) 0;
+      position: relative;
+
+      @include breakpoint-down('md') {
+        @include flex_centered;
+        flex-direction: column;
+      }
+
+      .line {
+        width: 90%;
+        height: 6px;
+        background-color: color.$cyan;
+        position: absolute;
+        z-index: 0;
+        top: 9rem;
+
+        @include breakpoint-down('md') {
+          height: 90%;
+          width: 6px;
+          left: 50%;
+        }
+      }
+
+      .card {
+        padding: fn.rem(1) fn.rem(32) fn.rem(41);
+        width: fn.rem(350);
+        background-color: color.$white;
+        border-radius: 5px;
+        z-index: 1;
+
+        @include breakpoint-down('md') {
+          margin-bottom: 2rem;
+          width: 80vw;
+        }
+
+        img {
+          background-color: color.$light-purple;
+          padding: 1.2rem;
+          border-radius: 50%;
+          transform: translate(fn.rem(-92), -2.5rem);
+
+          @include breakpoint-down('md') {
+            transform: translate(fn.rem(0), -2.5rem);
+          }
+        }
+
+        h3 {
+          font-weight: 700;
+          font-size: fn.rem(22);
+          line-height: fn.rem(33);
+          text-align: left;
+          color: color.$dark;
+        }
+
+        p {
+          margin-top: fn.rem(12);
+          text-align: left;
+          width: 100%;
+          font-weight: 500;
+          font-size: fn.rem(15);
+          line-height: fn.rem(26);
+        }
+
+        &.second {
+          transform: translateY(2.5rem);
+        }
+
+        &.third {
+          transform: translateY(5rem);
+        }
+      }
+    }
+  }
+
+  .boost {
+    @include flex_centered;
+    flex-direction: column;
+    height: fn.rem(250);
+    background: url('../../assets/images/bg-boost-desktop.svg') no-repeat;
+    background-color: color.$light-purple;
+    background-position: bottom;
+    object-fit: contain;
+    background-size: 100%;
+    text-align: center;
+
+    @include breakpoint-down('md') {
+      background: url('../../assets/images/bg-boost-mobile.svg') no-repeat;
+      background-color: color.$light-purple;
+      background-position: bottom;
+      object-fit: contain;
+      background-size: 100%;
+    }
+
+    h2 {
+      font-weight: 700;
+      line-height: fn.rem(48);
+      letter-spacing: fn.rem(-1);
+      color: color.$white;
+      margin-bottom: fn.rem(32);
+      @include breakpoint-down('md') {
+        font-size: fn.rem(28);
+      }
+    }
+  }
+}
