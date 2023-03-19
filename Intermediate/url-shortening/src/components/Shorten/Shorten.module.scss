@@ -1,0 +1,110 @@
+@use '../../scss//utils/functions' as fn;
+@use '../../scss/global/colors' as color;
+@import '../../scss/utils/mixins';
+@import '../../scss/utils/breakpoints';
+
+.shorten_wrapper {
+  transform: translateY(-5rem);
+  .shorten_container {
+    max-width: 80vw;
+    padding: fn.rem(48) fn.rem(166);
+    margin: 0 auto;
+    margin-top: 15rem;
+    background: url('../../assets/images/bg-shorten-desktop.svg') no-repeat;
+    background-color: color.$light-purple;
+    background-position: center;
+    object-fit: contain;
+    background-size: 100%;
+    width: 100%;
+    padding: fn.rem(52) fn.rem(64);
+    border-radius: fn.rem(10);
+    z-index: 1;
+    @include breakpoint-down('md') {
+      background: url('../../assets/images/bg-shorten-mobile.svg') no-repeat;
+      background-color: color.$light-purple;
+      background-position: center;
+      object-fit: contain;
+      background-size: 100%;
+      width: 100%;
+      max-width: 95vw;
+      padding: 0;
+    }
+
+    form {
+      @include flex_justifyBetween;
+      @include breakpoint-down('md') {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      label {
+        @include flex;
+        flex-direction: column;
+        width: 82%;
+        @include breakpoint-down('md') {
+          width: 100%;
+          margin-bottom: 1.5rem;
+        }
+        input {
+          border-radius: fn.rem(10);
+          width: 100%;
+          padding: fn.rem(20);
+          border: none;
+
+          &:focus {
+            outline: none;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+  .links {
+    max-width: 80vw;
+    margin: 1rem auto 0;
+    @include flex_justifyBetween;
+    background-color: color.$white;
+    padding: fn.rem(18) fn.rem(32);
+    border-radius: 5px;
+    @include breakpoint-down('md') {
+      flex-direction: column;
+      max-width: 95vw;
+    }
+
+    p {
+      @include flex_align;
+      font-weight: 500;
+      font-size: fn.rem(16);
+      line-height: fn.rem(36);
+      letter-spacing: fn.rem(0.15);
+      color: color.$dark;
+      @include breakpoint-down('md') {
+        border-bottom: 1px solid color.$grey;
+      }
+    }
+
+    .short {
+      @include flex;
+      gap: fn.rem(24);
+      @include breakpoint-down('md') {
+        gap: fn.rem(10);
+      }
+      @include breakpoint-down('md') {
+        text-align: left;
+        flex-direction: column;
+      }
+      p {
+        color: color.$cyan;
+        @include breakpoint-down('md') {
+          border-bottom: none;
+          margin-top: fn.rem(10);
+        }
+      }
+
+      button {
+        border-radius: 5px;
+        padding: fn.rem(8.5) fn.rem(23.5);
+      }
+    }
+  }
+}
