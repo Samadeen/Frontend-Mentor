@@ -134,5 +134,9 @@
     border-bottom: 1px solid color.$grey;
     font-size: fn.rem(14);
     margin-right: fn.rem(9);
+    @include breakpoint-down('sm') {
+      max-width: 95.5vw;
+      margin: 0 auto;
+    }
   }
 }
