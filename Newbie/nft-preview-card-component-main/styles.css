@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --main-BG: hsl(217, 54%, 11%);
+  --card-BG: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  background-color: var(--main-BG);
+}
+
+p {
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 390px;
+  margin: 0 auto;
+  margin: 2rem;
+  padding: 1.5rem;
+  background-color: var(--card-BG);
+  border-radius: 1rem;
+}
+
+.image {
+  position: relative;
+}
+
+.image img {
+  border-radius: 10px;
+}
+
+.icon__view img {
+  position: absolute;
+  padding: 10rem;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.icon__view img:hover {
+  opacity: 1;
+}
+
+.icon__view:hover {
+  background-color: var(--cyan);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.headings h1 {
+  color: var(--white);
+  font-size: 1.8rem;
+  margin-top: 1rem;
+}
+
+.headings p {
+  color: var(--soft-blue);
+  margin: 1rem 0;
+  opacity: 0.8;
+}
+
+.nft__details,
+.eth,
+.days {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nft__details {
+  justify-content: space-between;
+}
+
+.eth p {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.days p {
+  color: var(--soft-blue);
+  opacity: 0.8;
+}
+
+hr {
+  margin-top: 1rem;
+  opacity: 0.3;
+}
+
+.image__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-top: 1.5rem;
+}
+
+.image__avatar img {
+  width: 3.5rem;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.image__avatar p span {
+  color: var(--white);
+  font-weight: 400;
+  transition: all 0.2s ease;
+}
+
+figcaption p {
+  color: var(--soft-blue);
+}
+
+.image__avatar p span:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+.attribution {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin: 5.5rem auto 2rem;
+    transform: scale(0.85);
+  }
+}
