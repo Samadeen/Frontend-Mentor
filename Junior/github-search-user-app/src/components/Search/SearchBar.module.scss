@@ -1,0 +1,66 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.search {
+  width: 100%;
+  margin-top: fn.rem(36);
+
+  form {
+    label {
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 0.1rem;
+        left: 2rem;
+      }
+
+      input {
+        border: none;
+        width: 100%;
+        padding: fn.rem(22) fn.rem(80);
+        background: #fefefe;
+        box-shadow: fn.rem(0) fn.rem(16) fn.rem(30) fn.rem(-10)
+          rgba(70, 96, 187, 0.198567);
+        border-radius: fn.rem(15);
+        font-size: fn.rem(18);
+        line-height: fn.rem(25);
+        color: #4b6a9b;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      small {
+        position: absolute;
+        color: #f74646;
+        z-index: 1;
+        right: 16.5%;
+        top: 0;
+      }
+
+      button {
+        position: absolute;
+        top: -0.83rem;
+        right: fn.rem(10);
+        padding: fn.rem(12.5) fn.rem(24);
+        background: #0079ff;
+        font-weight: 700;
+        font-size: fn.rem(16);
+        line-height: fn.rem(24);
+        color: #ffffff;
+        border: none;
+        border-radius: fn.rem(10);
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+          background-color: #60abff;
+        }
+      }
+    }
+  }
+}
