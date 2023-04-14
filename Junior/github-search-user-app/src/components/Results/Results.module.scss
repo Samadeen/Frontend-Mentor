@@ -1,0 +1,95 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.results_container {
+  @include flex;
+  align-items: flex-start;
+  gap: fn.rem(37);
+  padding: fn.rem(48);
+  margin-top: fn.rem(20);
+  background: #fefefe;
+  box-shadow: fn.rem(0) fn.rem(16) fn.rem(30) fn.rem(-10)
+    rgba(70, 96, 187, 0.198567);
+  border-radius: fn.rem(15);
+
+  .profile_img {
+    border-radius: 50%;
+    width: fn.rem(117);
+    height: fn.rem(117);
+  }
+
+  .results {
+    .results_details {
+      @include flex_justifyBetween;
+
+      .results_details_name {
+        p {
+          font-size: fn.rem(16);
+          line-height: fn.rem(24);
+          color: #0079ff;
+        }
+      }
+    }
+
+    .bio {
+      margin-top: fn.rem(20);
+      p {
+        font-size: fn.rem(15);
+        line-height: fn.rem(25);
+        color: #4b6a9b;
+      }
+    }
+
+    .repo {
+      @include flex_justifyBetween;
+      background: #f6f8ff;
+      border-radius: fn.rem(10);
+      padding: fn.rem(16) fn.rem(32);
+      margin-top: fn.rem(37);
+
+      .num {
+        h3 {
+          font-weight: 700;
+          font-size: fn.rem(22);
+          line-height: fn.rem(33);
+          text-transform: uppercase;
+          color: #2b3442;
+        }
+        p {
+          font-size: fn.rem(13);
+          line-height: fn.rem(19);
+          color: #4b6a9b;
+        }
+      }
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: fn.rem(37);
+
+      .group {
+        @include flex_align;
+        gap: 1rem;
+
+        p {
+          font-size: fn.rem(15);
+          line-height: fn.rem(22);
+          color: #4b6a9b;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: #4b6a9b;
+        display: block;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
