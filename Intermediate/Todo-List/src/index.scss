@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+.App {
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+#light {
+  background-color: #fff;
+}
+
+#dark {
+  background-color: #171823;
+}
+
+li {
+  list-style: none;
+}
+
+div#dark {
+  background-color: #25273d;
+}
+
+div#light {
+  background-color: #fff;
+}
+
+input#dark {
+  background-color: #25273d;
+  color: #c8cbe7;
+}
+
+input#light {
+  background-color: #fff;
+  color: #494c6b;
+}

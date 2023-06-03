@@ -1,0 +1,21 @@
+.addTask_container {
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  width: 540px;
+  background: #ffffff;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+
+  input {
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.1rem;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

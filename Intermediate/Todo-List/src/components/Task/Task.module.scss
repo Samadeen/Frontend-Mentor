@@ -1,0 +1,41 @@
+.task_container {
+  border-radius: 5px;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+
+  .task_wrapper {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    width: 540px;
+    height: 64px;
+    background: #ffffff;
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+      cursor: pointer;
+
+      &.icon:hover {
+        box-shadow: 0 3px 6px rgba(139, 145, 245);
+        border-radius: 50%;
+      }
+
+      &.close {
+        width: 1.1rem;
+        height: 1.1rem;
+      }
+    }
+
+    input {
+      padding: 1rem;
+      width: 100%;
+      font-size: 1.1rem;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
