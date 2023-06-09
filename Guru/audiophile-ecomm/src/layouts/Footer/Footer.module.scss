@@ -1,0 +1,103 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.footer_container {
+  background-color: color.$black;
+  color: white;
+
+  .wrapper {
+    max-width: 69.36456rem;
+    margin: 0 auto;
+    padding: 4.69rem 0 3rem;
+    // padding: fn.rem(75) 0 fn.rem(48);
+
+    .top,
+    .bottom {
+      @include flex_justifyBetween;
+      @media (max-width: 770px) {
+        & {
+          @include flex_centered;
+          flex-direction: column;
+        }
+      }
+    }
+
+    .top {
+      margin-bottom: fn.rem(36);
+      .footer_nav {
+        @include flex_align;
+        gap: fn.rem(34);
+        @media (max-width: 770px) {
+          & {
+            margin-top: 2rem;
+          }
+        }
+        a {
+          font-weight: 700;
+          font-size: fn.rem(13);
+          line-height: fn.rem(25);
+          letter-spacing: fn.rem(2);
+          text-transform: uppercase;
+          color: color.$white;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          @media (max-width: 400px) {
+            & {
+              font-size: fn.rem(10);
+            }
+          }
+
+          &:hover {
+            color: color.$orange;
+          }
+        }
+      }
+    }
+
+    .bottom {
+      @include flex_align;
+
+      .footer_details {
+        @include flex_justifyBetween;
+        flex: 0.49;
+        gap: fn.rem(56);
+        flex-direction: column;
+        @media (max-width: 770px) {
+          & {
+            text-align: center;
+          }
+        }
+        p {
+          font-weight: 500;
+          font-size: fn.rem(15);
+          line-height: fn.rem(25);
+          color: color.$white;
+          opacity: 0.5;
+          width: 33.75rem;
+        }
+      }
+
+      .social_icons {
+        @include flex_align;
+        gap: 1rem;
+        @media (max-width: 770px) {
+          & {
+            margin-top: 2rem;
+          }
+        }
+
+        svg {
+          fill: color.$white;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+            fill: color.$orange;
+          }
+        }
+      }
+    }
+  }
+}
