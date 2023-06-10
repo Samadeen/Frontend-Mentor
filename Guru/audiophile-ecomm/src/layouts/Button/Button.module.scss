@@ -4,12 +4,16 @@
 @import '../../sass/utils/breakpoints';
 
 .button {
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
   border: none;
-  padding: fn.rem(15) fn.rem(30);
-  font-size: 1rem;
+  padding: 0.97rem 1.84rem;
   font-family: inherit;
   cursor: pointer;
-  text-transform: uppercase;
   text-decoration: none;
   @media (max-width: 770px) {
     & {
@@ -21,7 +25,7 @@
 
 .button.transparent {
   border: 1px solid color.$black;
-  background-color: color.$white;
+  background-color: transparent;
   color: color.$black;
 }
 
