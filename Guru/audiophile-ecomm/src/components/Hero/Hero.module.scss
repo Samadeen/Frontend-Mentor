@@ -1,0 +1,91 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.hero_container {
+  background-color: color.$dark;
+  padding: fn.rem(5) fn.rem(166);
+  background: url('../../assets/home/desktop/image-hero.jpg'),
+    color.$dark 0px 0px / 100% 100% no-repeat;
+  background-size: contain;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  height: 45.375rem;
+  flex-shrink: 0;
+  @media (max-width: 770px) {
+    & {
+      padding: fn.rem(32) fn.rem(32);
+      flex-direction: column;
+    }
+  }
+
+  .hero_details {
+    max-width: 69.36456rem;
+    width: 69.36456rem;
+    margin: 0 auto;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    transform: translateY(50%);
+    @media (max-width: 770px) {
+      & {
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    h5 {
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.625rem;
+      text-transform: uppercase;
+      opacity: 0.49;
+      color: color.$white;
+      @media (max-width: 770px) {
+        & {
+          text-align: center;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 3.625rem; /* 103.571% */
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+      width: 24.75rem;
+      margin: fn.rem(24) 0;
+      color: color.$white;
+      @media (max-width: 770px) {
+        & {
+          font-size: fn.rem(46);
+        }
+      }
+    }
+
+    p {
+      font-weight: 300;
+      font-size: fn.rem(15);
+      line-height: fn.rem(25);
+      color: color.$white;
+      mix-blend-mode: normal;
+      opacity: 0.75;
+      width: 21.8125rem;
+      margin-bottom: fn.rem(40);
+      @media (max-width: 770px) {
+        & {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
