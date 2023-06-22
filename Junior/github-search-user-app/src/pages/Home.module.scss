@@ -1,0 +1,12 @@
+@use '../sass//utils/functions' as fn;
+@use '../sass/global/colors' as color;
+@import '../sass/utils/mixins';
+@import '../sass/utils/breakpoints';
+
+.home_container {
+  @include flex_centered;
+  flex-direction: column;
+  min-height: 100vh;
+  width: fn.rem(780);
+  margin: 0 auto;
+}

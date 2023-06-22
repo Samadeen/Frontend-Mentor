@@ -1,0 +1,26 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+header {
+  @include flex_justifyBetween;
+  width: fn.rem(780);
+  margin: 0 auto;
+
+  .images {
+    @include flex_align;
+    gap: 0.5rem;
+
+    p {
+      font-style: normal;
+      font-weight: 700;
+      font-size: fn.rem(13);
+      line-height: fn.rem(19);
+      text-align: right;
+      letter-spacing: fn.rem(2.5);
+      color: #697c9a;
+      text-transform: uppercase;
+    }
+  }
+}

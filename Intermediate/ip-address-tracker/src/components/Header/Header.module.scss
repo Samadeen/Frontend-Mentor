@@ -1,0 +1,55 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.header_container {
+  background: url('../../assets/images/pattern-bg-desktop.png') no-repeat;
+  background-position: center;
+  height: fn.rem(280);
+  height: 35vh;
+  width: 100%;
+  object-fit: contain;
+  background-size: cover;
+  @include flex_align;
+  flex-direction: column;
+  padding-top: fn.rem(33);
+  position: relative;
+
+  h1 {
+    font-weight: 500;
+    font-size: fn.rem(32);
+    line-height: fn.rem(30);
+    letter-spacing: -0.285714px;
+    color: color.$white;
+    margin-bottom: fn.rem(31);
+  }
+
+  form {
+    label {
+      @include flex_align;
+      width: 40vw;
+      margin: 0 auto;
+      input {
+        width: 100%;
+        padding: fn.rem(18.5) fn.rem(24);
+        background-color: color.$white;
+        border: none;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        font-size: fn.rem(18);
+        line-height: fn.rem(21);
+
+        &:focus {
+          outline: none;
+        }
+      }
+      img {
+        padding: fn.rem(22.5) fn.rem(24);
+        background-color: color.$very-Dark-Gray;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+      }
+    }
+  }
+}
