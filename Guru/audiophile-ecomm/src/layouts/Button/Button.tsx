@@ -3,7 +3,7 @@ import styles from './Button.module.scss';
 import React from 'react';
 
 interface ButtonProps {
-  product: string;
+  product: any;
   btnText: string;
   orange?: boolean;
   black?: boolean;
