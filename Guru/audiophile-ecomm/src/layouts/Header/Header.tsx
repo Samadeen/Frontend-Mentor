@@ -10,10 +10,10 @@ const Header = () => {
       <div className={styles.desktop_nav}>
         <img src={logo} alt='logo' />
         <nav>
-          <Link to='./'>Home</Link>
-          <Link to='./'>Headphones</Link>
-          <Link to='./'>Speakers</Link>
-          <Link to='./'>Earphones</Link>
+          <Link to='/'>Home</Link>
+          <Link to='/headphones'>Headphones</Link>
+          <Link to='/speakers'>Speakers</Link>
+          <Link to='/earphones'>Earphones</Link>
         </nav>
         <img src={carts} alt='cart' />
       </div>
