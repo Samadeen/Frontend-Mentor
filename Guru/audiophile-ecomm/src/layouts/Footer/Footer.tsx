@@ -9,10 +9,10 @@ const Footer = () => {
         <div className={styles.top}>
           <img src={logo} alt='logo' />
           <div className={styles.footer_nav}>
-            <Link to='./'>Home</Link>
-            <Link to='./'>Headphones</Link>
-            <Link to='./'>Speakers</Link>
-            <Link to='./'>Earphones</Link>
+            <Link to='/'>Home</Link>
+            <Link to='/headphones'>Headphones</Link>
+            <Link to='/speakers'>Speakers</Link>
+            <Link to='/earphones'>Earphones</Link>
           </div>
         </div>
         <div className={styles.bottom}>
