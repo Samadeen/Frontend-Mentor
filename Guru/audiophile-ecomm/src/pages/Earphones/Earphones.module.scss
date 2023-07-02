@@ -1,0 +1,20 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.earphones_container {
+  h1 {
+    color: color.$white;
+    text-align: center;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.75rem; /* 110% */
+    letter-spacing: 0.08931rem;
+    text-transform: uppercase;
+    background-color: color.$dark;
+    padding: 6.16rem 0 6.06rem;
+    margin-bottom: 10rem;
+  }
+}
