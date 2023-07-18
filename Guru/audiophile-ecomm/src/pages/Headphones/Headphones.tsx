@@ -33,7 +33,7 @@ const Headphones = () => {
           img={headphones[1].image.desktop}
           reverse={true}
           title={headphones[1].name}
-          newProduct={true}
+          newProduct={false}
           id={headphones[1].id}
         />
         <Card
@@ -41,7 +41,7 @@ const Headphones = () => {
           img={headphones[0].image.desktop}
           reverse={false}
           title={headphones[0].name}
-          newProduct={true}
+          newProduct={false}
           id={headphones[1].id}
         />
 
