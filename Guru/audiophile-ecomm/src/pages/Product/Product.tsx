@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styles from './Product.module.scss';
 import Button from '../../layouts/Button/Button';
 import Shop from '../../components/Shop/Shop';
 import Ad from '../../components/Ad/Ad';
 import Layout from '../../layouts/Layout/Layout';
+import { useShoppingCart } from '../../contexts/cart-context';
 
 interface Product {
   id: number;
@@ -44,8 +45,8 @@ interface Product {
 const Product: React.FC = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const { id } = useParams<{ id: string }>();
-  console.log(id);
 
+  const navigate = useNavigate();
   useEffect(() => {
     axios
       .get<Product>(`http://localhost:3000/data/${id}`)
@@ -54,6 +55,18 @@ const Product: React.FC = () => {
   }, [id]);
 
   console.log(product);
+
+  const back = () => {
+    return navigate(-1);
+  };
+
+  const {
+    decreaseCartQuantity,
+    increaseCartQuantity,
+    getItemQuantity,
+    addToCart,
+  } = useShoppingCart();
+  const quantity = getItemQuantity(parseInt(id ?? ''));
 
   const productDesktopImage = product?.image?.desktop?.slice(1);
   const galleryFirstDesktopImage = product?.gallery?.first?.desktop?.slice(1);
@@ -72,22 +85,37 @@ const Product: React.FC = () => {
   return (
     <Layout>
       <section className={styles.product_container}>
-        <h6>Go Back</h6>
+        <h6 onClick={back}>Go Back</h6>
         <div className={styles.product_details}>
           <img src={`src/${productDesktopImage}`} alt={product.name} />
           <div className={styles.productCard_details}>
-            {product.new && <h6>New Product</h6>}
+            {product.new && <h5>New Product</h5>}
             <h2>{product.name}</h2>
             <p>{product.description}</p>
-            <h4>${product.price}</h4>
+            <h4>${(product.price * quantity).toLocaleString()}</h4>
             <div className={styles.pricing}>
               <div className={styles.control}>
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
+                <button
+                  disabled={quantity === 1 && true}
+                  style={quantity === 1 ? { cursor: 'not-allowed' } : {}}
+                  onClick={() => decreaseCartQuantity(parseInt(id ?? ''))}
+                >
+                  -
+                </button>
+                <span>{quantity}</span>
+                <button
+                  onClick={() => increaseCartQuantity(parseInt(id ?? ''))}
+                >
+                  +
+                </button>
               </div>
               <div>
-                <button className={styles.button}>Add to Cart</button>
+                <button
+                  className={styles.button}
+                  onClick={() => addToCart(parseInt(id ?? ''))}
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
