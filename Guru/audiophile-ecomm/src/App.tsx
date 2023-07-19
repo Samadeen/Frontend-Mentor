@@ -6,6 +6,7 @@ import ScrollToTop from './utils/ScrollToTop';
 import Speakers from './pages/Speakers/Speakers';
 import Earphones from './pages/Earphones/Earphones';
 import Product from './pages/Product/Product';
+import Checkout from './pages/Checkout/Checkout';
 
 const App = () => {
   return (
@@ -17,11 +18,7 @@ const App = () => {
           <Route path='/speakers' element={<Speakers />} />
           <Route path='/earphones' element={<Earphones />} />
           <Route path='/:id' element={<Product />} />
-          {/* <Route path='/check' element={<CheckboxExample />} />
-          <Route path='/success' element={<SuccessPage />} />
-          <Route path='/checkout' element={<CheckingOut />} />
-          <Route path='/products' element={<Products />} />
-          */}
+          <Route path='/checkout-page' element={<Checkout />} />
         </Routes>
       </ScrollToTop>
     </>
