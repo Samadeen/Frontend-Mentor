@@ -1,0 +1,311 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.checkout_page {
+  background-color: color.$light-grey;
+  padding-bottom: 8.81rem;
+
+  button {
+    display: block;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+    border: none;
+    padding: 0.97rem 1.84rem;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    background-color: color.$orange;
+    color: color.$white;
+  }
+
+  h6 {
+    max-width: 69.36456rem;
+    margin: 0 auto;
+    padding: 4.94rem 0 2.97rem;
+    color: #000;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5625rem; /* 166.667% */
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  form {
+    max-width: 69.36456rem;
+    margin: 0 auto;
+    @include flex_justifyBetween;
+
+    .checkingOut_details {
+      width: 45.625rem;
+      padding: 3.38rem 3rem;
+      background-color: color.$white;
+      border-radius: 0.5rem;
+
+      h1 {
+        color: #000;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 2.25rem; /* 112.5% */
+        letter-spacing: 0.07144rem;
+        text-transform: uppercase;
+        margin-bottom: 2.56rem;
+      }
+
+      h2 {
+        color: #d87d4a;
+        font-size: 0.8125rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.5625rem; /* 192.308% */
+        letter-spacing: 0.05806rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .billing,
+      .shipping {
+        .billing_details,
+        .shipping_details {
+          label {
+            display: inline-block;
+            color: #000;
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: -0.01338rem;
+            width: 18.3125rem;
+            margin-right: 1rem;
+            margin-bottom: 0.56rem;
+
+            input {
+              margin-top: 0.56rem;
+              width: 100%;
+              padding: 1.12rem 1.5rem;
+              border-radius: 0.5rem;
+              border: 1px solid #cfcfcf;
+              background: #fff;
+
+              &::placeholder {
+                color: #000;
+                font-family: Manrope;
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: -0.01563rem;
+                opacity: 0.4;
+              }
+
+              &:focus {
+                outline: 1px solid color.$orange;
+              }
+            }
+          }
+        }
+      }
+
+      .shipping {
+        h2 {
+          margin-top: 3.31rem;
+        }
+        .shipping_details {
+          label.address {
+            display: block;
+            width: 95%;
+          }
+        }
+      }
+
+      .payment_details {
+        h2 {
+          margin-top: 3.81rem;
+        }
+        .payment_method {
+          @include flex_justifyBetween;
+
+          .method {
+            margin-bottom: 1.5rem;
+
+            label {
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              gap: 1rem;
+              flex-direction: row-reverse;
+              margin-top: 0.56rem;
+              padding: 1.12rem 1.5rem;
+              border-radius: 0.5rem;
+              border: 1px solid #cfcfcf;
+              background: #fff;
+              color: #000;
+              font-family: Manrope;
+              font-size: 0.875rem;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              letter-spacing: -0.01563rem;
+              width: 18.3125rem;
+            }
+          }
+        }
+
+        .eMoney_details {
+          label {
+            display: inline-block;
+            color: #000;
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: -0.01338rem;
+            width: 18.8rem;
+            margin-right: 1rem;
+            margin-bottom: 0.56rem;
+
+            input {
+              margin-top: 0.56rem;
+              width: 100%;
+              padding: 1.12rem 1.5rem;
+              border-radius: 0.5rem;
+              border: 1px solid #cfcfcf;
+              background: #fff;
+
+              &::placeholder {
+                color: #000;
+                font-family: Manrope;
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: -0.01563rem;
+                opacity: 0.4;
+              }
+
+              &:focus {
+                outline: 1px solid color.$orange;
+              }
+            }
+          }
+        }
+
+        .cash_details {
+          @include flex_justifyBetween;
+          gap: 2rem;
+          align-items: center;
+
+          p {
+            color: #000;
+            font-size: 0.9375rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.5625rem; /* 166.667% */
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    .summary {
+      width: 21.875rem;
+      height: 38.25rem;
+      overflow: auto;
+      padding: 2rem 2.06rem;
+      background-color: color.$white;
+      border-radius: 0.5rem;
+
+      h2 {
+        margin-bottom: 1.94rem;
+        color: #000;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.08038rem;
+        text-transform: uppercase;
+      }
+
+      .summary_details {
+        .item_details {
+          @include flex_justifyBetween;
+          gap: 0.5rem;
+          margin-bottom: 1.5rem;
+          .item {
+            @include flex;
+            gap: 1rem;
+            img {
+              width: 4rem;
+              height: 4rem;
+              flex-shrink: 0;
+              border-radius: 0.5rem;
+            }
+            .name {
+              h3 {
+                color: #000;
+                font-size: 0.9375rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 1.5625rem; /* 166.667% */
+              }
+
+              p {
+                color: #000;
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 1.5625rem; /* 178.571% */
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+      .summary_total {
+        p {
+          color: #000;
+          font-size: 0.9375rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 1.5625rem; /* 166.667% */
+          opacity: 0.5;
+          text-transform: uppercase;
+        }
+
+        h3 {
+          color: #000;
+          text-align: right;
+          font-size: 1.125rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+        .total,
+        .shipping,
+        .vat,
+        .grandTotal {
+          @include flex_justifyBetween;
+          align-items: center;
+          margin-bottom: 0.5rem;
+        }
+
+        .grandTotal {
+          margin-top: 1.5rem;
+          margin-bottom: 2rem;
+
+          h3 {
+            color: color.$orange;
+          }
+        }
+      }
+    }
+  }
+}
