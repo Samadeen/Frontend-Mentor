@@ -23,7 +23,7 @@ const Speakers = () => {
         <Card
           description={speakers[1].description}
           img={speakers[1].image.desktop}
-          reverse={true}
+          reverse={false}
           title={speakers[1].name}
           newProduct={true}
           id={speakers[1].id}
@@ -31,9 +31,9 @@ const Speakers = () => {
         <Card
           description={speakers[0].description}
           img={speakers[0].image.desktop}
-          reverse={false}
+          reverse={true}
           title={speakers[0].name}
-          newProduct={true}
+          newProduct={false}
           id={speakers[1].id}
         />
 
