@@ -1,0 +1,133 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.thankYou_wrapper {
+  @include flex_centered;
+  flex-direction: column;
+  z-index: 1;
+  //   left: 50%;
+  //   position: relative;
+  .backdrop {
+    width: 100vw;
+    background-color: #000000;
+    opacity: 0.4;
+    height: 100vh;
+    position: fixed;
+    top: 5.5rem;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .thankYou_container {
+    width: 33.75rem;
+    // height: 44.5625rem;
+    flex-shrink: 0;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    position: fixed;
+    // top: -35rem;
+    top: 20%;
+    z-index: 1;
+
+    h1 {
+      color: #000;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 2.25rem; /* 112.5% */
+      letter-spacing: 0.07144rem;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      color: #000;
+      font-size: 0.9375rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.5625rem; /* 166.667% */
+      opacity: 0.5;
+      margin-bottom: 2.06rem;
+    }
+
+    .order_summary {
+      @include flex_justifyBetween;
+      width: 27.75rem;
+      margin-bottom: 3rem;
+
+      .summary_details {
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        width: 15.375rem;
+        background-color: #f1f1f1;
+        padding: 2.06rem 2.16rem;
+        .item_details {
+          @include flex_justifyBetween;
+          gap: 0.5rem;
+          margin-bottom: 1.5rem;
+          .item {
+            @include flex;
+            gap: 1rem;
+            img {
+              width: 1.75rem;
+              height: 2rem;
+              flex-shrink: 0;
+              border-radius: 0.5rem;
+            }
+            .name {
+              h3 {
+                color: #000;
+                font-size: 0.9375rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 1.5625rem; /* 166.667% */
+              }
+
+              p {
+                color: #000;
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 1.5625rem; /* 178.571% */
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+    }
+    .total {
+      background-color: #000;
+      width: 12.375rem;
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      flex-direction: column;
+      padding: 0 0 2.5rem 2.06rem;
+      h4 {
+        color: #fff;
+        font-size: 0.9375rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.5625rem; /* 166.667% */
+        opacity: 0.5;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+      h2 {
+        color: #fff;
+        text-align: right;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
