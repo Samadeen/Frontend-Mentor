@@ -6,6 +6,7 @@ interface ButtonProps {
   product: any;
   btnText: string;
   orange?: boolean;
+  width?: boolean;
   black?: boolean;
   transparent?: boolean;
   to?: boolean;
@@ -18,12 +19,13 @@ const Button: React.FC<ButtonProps> = ({
   black,
   transparent,
   to,
+  width,
 }) => {
   return (
     <Link
       className={`${styles.button} ${orange ? styles.orange : ''} ${
-        black ? styles.black : ''
-      } ${transparent ? styles.transparent : ''} `}
+        width ? styles.width : ''
+      } ${black ? styles.black : ''} ${transparent ? styles.transparent : ''} `}
       to={to ? product : ''}
     >
       {btnText}
