@@ -42,7 +42,7 @@ const Headphones = () => {
           reverse={false}
           title={headphones[0].name}
           newProduct={false}
-          id={headphones[1].id}
+          id={headphones[0].id}
         />
 
         <Shop />
