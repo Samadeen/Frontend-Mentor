@@ -4,6 +4,9 @@
 
 header {
   background-color: color.$dark;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 
   .desktop_nav {
     @include flex_justifyBetween;
@@ -29,6 +32,29 @@ header {
         line-height: 1.5625rem; /* 192.308% */
         letter-spacing: 0.125rem;
         text-transform: uppercase;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+          color: color.$orange;
+        }
+      }
+    }
+
+    .cart {
+      position: relative;
+      cursor: pointer;
+      .count {
+        @include flex_centered;
+        height: 1.5rem;
+        width: 1.5rem;
+        background-color: color.$orange;
+        color: color.$white;
+        border-radius: 50%;
+        position: absolute;
+        top: -1rem;
+        left: 0.7rem;
+        font-size: 0.8rem;
+        font-weight: bold;
       }
     }
   }
