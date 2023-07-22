@@ -79,13 +79,13 @@ const Product: React.FC = () => {
 
   if (!product) {
     // Optional: Render a loading state or handle the null case
-    return <Spinner/>;
+    return <Spinner />;
   }
 
   return (
     <Layout>
       <section className={styles.product_container}>
-        <h6 onClick={back}>Go Back</h6>
+        <h6 onClick={() => back}>Go Back</h6>
         <div className={styles.product_details}>
           <img src={`src/${productDesktopImage}`} alt={product.name} />
           <div className={styles.productCard_details}>

@@ -8,6 +8,7 @@ import cash from '../../assets/home/desktop/cash.svg';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import ThankYou from '../../components/ThankYou/ThankYou';
+import { useNavigate } from 'react-router-dom';
 
 const validationSchema = Yup.object({
   name: Yup.string().required('Name is required'),
@@ -68,6 +69,12 @@ const Checkout = () => {
   const { selectedItems } = useContext(ProductContext) as ProductContextType;
   const { getItemQuantity, cartItems } = useShoppingCart();
 
+  const navigate = useNavigate();
+
+  const back = () => {
+    return navigate(-1);
+  };
+
   const handleToggle = () => {
     setToggle((prevState) => !prevState);
   };
@@ -109,7 +116,7 @@ const Checkout = () => {
   return (
     <Layout>
       <section className={styles.checkout_page}>
-        <h6>Go back</h6>
+        <h6 onClick={() => back}>Go back</h6>
         <form action='' onSubmit={formik.handleSubmit}>
           <div className={styles.checkingOut_details}>
             <h1>Checkout</h1>
