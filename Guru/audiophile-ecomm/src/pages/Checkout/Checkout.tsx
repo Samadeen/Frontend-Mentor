@@ -87,6 +87,7 @@ const Checkout = () => {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       setIsSubmitted(true);
+      console.log(values);
       // Perform additional actions, such as submitting the form data to a server
     },
   });

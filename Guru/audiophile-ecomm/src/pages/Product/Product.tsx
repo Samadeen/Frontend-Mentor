@@ -54,8 +54,6 @@ const Product: React.FC = () => {
       .catch((err) => console.log(err));
   }, [id]);
 
-  console.log(product);
-
   const back = () => {
     return navigate(-1);
   };
@@ -67,6 +65,7 @@ const Product: React.FC = () => {
     addToCart,
   } = useShoppingCart();
   const quantity = getItemQuantity(parseInt(id ?? ''));
+  console.log(quantity);
 
   const productDesktopImage = product?.image?.desktop?.slice(1);
   const galleryFirstDesktopImage = product?.gallery?.first?.desktop?.slice(1);
@@ -92,23 +91,30 @@ const Product: React.FC = () => {
             {product.new && <h5>New Product</h5>}
             <h2>{product.name}</h2>
             <p>{product.description}</p>
-            <h4>${(product.price * quantity).toLocaleString()}</h4>
+            <h4>
+              $
+              {quantity > 0
+                ? (product.price * quantity).toLocaleString()
+                : product.price.toLocaleString()}
+            </h4>
             <div className={styles.pricing}>
-              <div className={styles.control}>
-                <button
-                  disabled={quantity === 1 && true}
-                  style={quantity === 1 ? { cursor: 'not-allowed' } : {}}
-                  onClick={() => decreaseCartQuantity(parseInt(id ?? ''))}
-                >
-                  -
-                </button>
-                <span>{quantity}</span>
-                <button
-                  onClick={() => increaseCartQuantity(parseInt(id ?? ''))}
-                >
-                  +
-                </button>
-              </div>
+              {quantity > 0 && (
+                <div className={styles.control}>
+                  <button
+                    disabled={quantity === 1 && true}
+                    style={quantity === 1 ? { cursor: 'not-allowed' } : {}}
+                    onClick={() => decreaseCartQuantity(parseInt(id ?? ''))}
+                  >
+                    -
+                  </button>
+                  <span>{quantity}</span>
+                  <button
+                    onClick={() => increaseCartQuantity(parseInt(id ?? ''))}
+                  >
+                    +
+                  </button>
+                </div>
+              )}
               <div>
                 <button
                   className={styles.button}
@@ -149,7 +155,7 @@ const Product: React.FC = () => {
           <h2>You may also like</h2>
           <div className={styles.boxes}>
             <div className={styles.box}>
-              <img src={`src/${imagesYouMayLikeOne}`} alt={product.name} />
+              <img src={`./src/${imagesYouMayLikeOne}`} alt={product.name} />
               <h3>{product.others[0]?.name}</h3>
               <Button
                 btnText='See Product'

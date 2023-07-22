@@ -52,7 +52,7 @@ export const ShoppingCartProvider = ({
 
   // to get a single item quantity in a cart
   const getItemQuantity = (id: number) => {
-    return cartItems.find((item) => item.id === id)?.quantity || 1;
+    return cartItems.find((item) => item.id === id)?.quantity || 0;
   };
 
   // to increase item quantity in cart

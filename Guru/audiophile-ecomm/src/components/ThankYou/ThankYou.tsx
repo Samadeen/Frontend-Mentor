@@ -1,50 +1,55 @@
 import styles from './ThankYou.module.scss';
 import check from '../../assets/home/desktop/check.png';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { ProductContext } from '../../api/product-api';
 import { useShoppingCart } from '../../contexts/cart-context';
 import Button from '../../layouts/Button/Button';
 
-const ThankYou = ({ handleToggle }) => {
-  interface Product {
-    id: number;
-    name: string;
+interface Product {
+  id: number;
+  name: string;
+  slug: string;
+  image: {
+    desktop: string;
+  };
+  gallery: {
+    first: {
+      desktop: string;
+    };
+    second: {
+      desktop: string;
+    };
+    third: {
+      desktop: string;
+    };
+  };
+  new: boolean;
+  price: number;
+  description: string;
+  features: string;
+  includes: {
+    quantity: number;
+    item: string;
+  }[];
+  others: {
     slug: string;
+    name: string;
     image: {
       desktop: string;
     };
-    gallery: {
-      first: {
-        desktop: string;
-      };
-      second: {
-        desktop: string;
-      };
-      third: {
-        desktop: string;
-      };
-    };
-    new: boolean;
-    price: number;
-    description: string;
-    features: string;
-    includes: {
-      quantity: number;
-      item: string;
-    }[];
-    others: {
-      slug: string;
-      name: string;
-      image: {
-        desktop: string;
-      };
-    }[];
-  }
+  }[];
+}
 
-  interface ProductContextType {
-    products: Product[];
-    selectedItems: Product[];
-  }
+interface ProductContextType {
+  products: Product[];
+  selectedItems: Product[];
+}
+
+type ThankYouProps = {
+  handleToggle: () => void;
+};
+
+const ThankYou: React.FC<ThankYouProps> = ({ handleToggle }) => {
   const { selectedItems } = useContext(ProductContext) as ProductContextType;
   const { getItemQuantity, cartItems, clearCart } = useShoppingCart();
 
@@ -55,7 +60,7 @@ const ThankYou = ({ handleToggle }) => {
 
   return (
     <div className={styles.thankYou_wrapper}>
-      <div className={styles.backdrop} onClick={() => handleToggle} />
+      <div className={styles.backdrop} onClick={handleToggle} />
       <section className={styles.thankYou_container}>
         <img src={check} alt='check' />
         <h1>
