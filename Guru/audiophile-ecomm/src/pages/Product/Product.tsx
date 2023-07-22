@@ -7,6 +7,7 @@ import Shop from '../../components/Shop/Shop';
 import Ad from '../../components/Ad/Ad';
 import Layout from '../../layouts/Layout/Layout';
 import { useShoppingCart } from '../../contexts/cart-context';
+import Spinner from '../../components/Spinner/Spinner';
 
 interface Product {
   id: number;
@@ -78,7 +79,7 @@ const Product: React.FC = () => {
 
   if (!product) {
     // Optional: Render a loading state or handle the null case
-    return <div>Loading...</div>;
+    return <Spinner/>;
   }
 
   return (

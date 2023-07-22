@@ -5,13 +5,14 @@ import Card from '../../components/Card/Card';
 import Shop from '../../components/Shop/Shop';
 import Ad from '../../components/Ad/Ad';
 import styles from './Earphones.module.scss';
+import Spinner from '../../components/Spinner/Spinner';
 
 const Earphones = () => {
   const earphonesContext = useContext(EarphonesContext);
 
   if (!earphonesContext) {
     // Optional: Render a loading state or handle the null case
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   const { earphones } = earphonesContext;

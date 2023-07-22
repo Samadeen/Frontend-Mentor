@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createContext, useEffect, useState, ReactNode } from 'react';
+import Spinner from '../components/Spinner/Spinner';
 
 interface Speaker {
   id: number;
@@ -80,7 +81,7 @@ export const SpeakersProvider: React.FC<SpeakersProviderProps> = ({
 
   if (speakers === null) {
     // Optional: Render a loading state or handle the null case
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   return (
