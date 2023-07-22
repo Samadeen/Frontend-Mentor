@@ -1,17 +1,11 @@
-* {
-  border: 0;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 :root {
   --hue: 223;
   --bg: hsl(var(--hue), 90%, 90%);
   --fg: hsl(var(--hue), 90%, 10%);
   --trans-dur: 0.3s;
-  font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
+  /* font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320)); */
 }
-body {
+.smiley_container {
   background-color: var(--bg);
   color: var(--fg);
   font: 1em/1.5 sans-serif;

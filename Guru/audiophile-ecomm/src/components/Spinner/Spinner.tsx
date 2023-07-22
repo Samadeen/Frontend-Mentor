@@ -1,6 +1,8 @@
+import './Spinner.css';
+
 const Spinner = () => {
   return (
-    <div>
+    <div className='smiley_container'>
       <svg
         role='img'
         aria-label='Mouth and eyes come from 9:00 and rotate clockwise into position, right eye blinks, then all parts rotate and merge into 3:00'
