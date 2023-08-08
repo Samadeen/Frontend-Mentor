@@ -1,0 +1,77 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.choose_container {
+  @include flex_centered;
+  flex-direction: column;
+  max-width: 80rem;
+  margin: 0 auto;
+  height: 36.0625rem;
+  flex-shrink: 0;
+  border-radius: 0.625rem;
+  background: #2c343e;
+  h2 {
+    color: color.$light-cream;
+    text-align: center;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 3rem; /* 120% */
+    margin: 7rem 0 2rem;
+    font-family: 'Fraunces';
+  }
+  p {
+    color: #fefcf7;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem; /* 162.5% */
+    max-width: 33.75rem;
+    margin: 0 auto;
+    opacity: 0.8;
+  }
+  .choose_cards {
+    @include flex_centered;
+    gap: 1.87rem;
+    transform: translateY(5.37rem);
+    .choose_card {
+      @include flex_centered;
+      flex-direction: column;
+      width: 21.875rem;
+      height: 23.875rem;
+      flex-shrink: 0;
+      border-radius: 0.5rem;
+      background: color.$dark-cyan;
+      padding: 4.5rem 3rem 3rem 3rem;
+
+      img {
+        margin-bottom: 3.5rem;
+      }
+
+      h3 {
+        color: color.$light-cream;
+        text-align: center;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 2rem; /* 133.333% */
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        color: #fefcf7;
+        text-align: center;
+        font-family: Barlow;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.625rem; /* 162.5% */
+        opacity: 0.8;
+      }
+    }
+  }
+}
