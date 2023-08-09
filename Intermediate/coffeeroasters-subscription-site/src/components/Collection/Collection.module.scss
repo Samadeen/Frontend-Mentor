@@ -1,0 +1,60 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.collection_container {
+  max-width: 80rem;
+  margin: 11.78rem auto;
+
+  h2 {
+    @include flex_centered;
+    text-align: center;
+    font-family: 'Fraunces';
+    font-size: 11.375rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 4.5rem; /* 48% */
+    margin: 0 auto;
+    height: 12.25rem;
+    flex-shrink: 0;
+    background: -webkit-linear-gradient(90deg, #fefcf7, #33333339);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .collectable {
+    @include flex_centered;
+    gap: 1.87rem;
+    .collection_card {
+      width: 15.9375rem;
+      transform: translateY(-4.5rem);
+      img {
+        width: 15.9375rem;
+        height: 12.0625rem;
+        flex-shrink: 0;
+        margin-bottom: 4.47rem;
+      }
+      h3 {
+        color: color.$dark-grey;
+        text-align: center;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        line-height: 2rem; /* 133.333% */
+      }
+      p {
+        height: 4.85rem;
+        padding: 0 0.5rem;
+        color: color.$dark-grey;
+        text-align: center;
+        font-family: Barlow;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.625rem; /* 162.5% */
+      }
+    }
+  }
+}
