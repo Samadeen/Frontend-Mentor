@@ -1,0 +1,44 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.headquarter_container {
+  max-width: 65.3125rem;
+  margin: 10.5rem auto;
+
+  h2 {
+    color: #83888f;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 2rem; /* 133.333% */
+    margin-bottom: 4.5rem;
+  }
+  .headquarter_wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 6.75rem;
+
+    .headquarter {
+      width: 17.8125rem;
+      h3 {
+        color: #333d4b;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 2.25rem; /* 112.5% */
+        margin: 2.87rem 0 1.5rem;
+      }
+
+      p {
+        color: #333d4b;
+        font-family: Barlow;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.625rem; /* 162.5% */
+      }
+    }
+  }
+}
