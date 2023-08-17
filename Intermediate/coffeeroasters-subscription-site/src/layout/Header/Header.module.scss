@@ -1,0 +1,31 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.header {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2.72rem 0;
+  @include flex_justifyBetween;
+
+  nav.desktop_nav {
+    display: inline-flex;
+    padding-right: 0px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.0625rem;
+
+    a {
+      color: color.$grey;
+      font-family: 'Barlow';
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 0.9375rem; /* 125% */
+      letter-spacing: 0.05769rem;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+}
