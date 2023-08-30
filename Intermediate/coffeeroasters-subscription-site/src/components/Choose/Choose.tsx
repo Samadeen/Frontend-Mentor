@@ -15,8 +15,10 @@ const Choose = () => {
           return (
             <div className={styles.choose_card} key={choose.title}>
               <img src={choose.img} alt={choose.title} />
-              <h3>{choose.title}</h3>
-              <p>{choose.description}</p>
+              <div className=''>
+                <h3>{choose.title}</h3>
+                <p>{choose.description}</p>
+              </div>
             </div>
           );
         })}
