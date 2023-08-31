@@ -11,6 +11,23 @@
   object-fit: contain;
   border-radius: 0.625rem;
   padding: 8.53rem 5.31rem;
+  @media (max-width: 820px) {
+    max-width: 43.0625rem;
+    height: 25rem;
+    background: url('../../assets/plan/tablet/image-hero-blackcup.jpg')
+      no-repeat;
+    background-size: 100%;
+    padding: 6.53rem 3.31rem;
+  }
+
+  @media (max-width: 520px) {
+    max-width: 20.4375rem;
+    height: 25rem;
+    background: url('../../assets/plan/mobile/image-hero-blackcup.jpg')
+      no-repeat;
+    background-size: 100%;
+    padding: 6.53rem 1.31rem;
+  }
 
   h1 {
     color: color.$light-cream;
@@ -19,6 +36,19 @@
     font-weight: 900;
     line-height: 3rem; /* 120% */
     margin-bottom: 1.5rem;
+    @media (max-width: 820px) {
+      font-size: 3rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 3rem; /* 100% */
+    }
+
+    @media (max-width: 520px) {
+      font-size: 2.5rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 2.5rem; /* 100% */
+    }
   }
 
   p {
@@ -30,5 +60,14 @@
     line-height: 1.625rem; /* 162.5% */
     opacity: 0.8;
     width: 27.8125rem;
+
+    @media (max-width: 520px) {
+      width: 17.4125rem;
+      width: auto;
+      font-size: 0.9375rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.5625rem; /* 100% */
+    }
   }
 }
