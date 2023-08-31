@@ -18,11 +18,21 @@
     font-weight: 900;
     line-height: 2rem; /* 133.333% */
     margin-bottom: 4.5rem;
+    @media (max-width: 520px) {
+      text-align: center;
+    }
   }
   .headquarter_wrapper {
     display: flex;
     align-items: flex-start;
     gap: 6.75rem;
+
+    @media (max-width: 520px) {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
 
     .headquarter {
       width: 17.8125rem;
