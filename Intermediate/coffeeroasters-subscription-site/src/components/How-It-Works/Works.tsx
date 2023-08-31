@@ -60,7 +60,9 @@ const Works: React.FC<Theme> = ({ dark }) => {
           </div>
         </div>
       </div>
-      <Button btnText='Create your plan' create='/create-plan' to={true} />
+      <div className={styles.center}>
+        <Button btnText='Create your plan' create='/create-plan' to={true} />
+      </div>
     </section>
   );
 };
